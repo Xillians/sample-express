@@ -5,7 +5,8 @@ setting a few expected scenarios (server not responding with 500, etc.)
 
 ## Usage
 
-Application is hosted on heroku. To use live, the base url is: TBD
+Application is hosted on heroku. To use live, the base url is:
+`https://vast-citadel-04009.herokuapp.com/`
 
 ### Endpoints
 
