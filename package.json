@@ -7,7 +7,8 @@
     "start": "node ./dist/app.js",
     "test": "mocha ./dist/tests/*.js",
     "build": "tsc",
-    "buildOnSave": "tsc -w"
+    "buildOnSave": "tsc -w",
+    "deploy": "git push heroku master"
   },
   "author": "",
   "license": "ISC",
