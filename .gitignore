@@ -1,0 +1,8 @@
+# packages
+node_modules
+
+# env variables
+.env
+
+# compiled files
+dist/
