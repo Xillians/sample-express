@@ -83,5 +83,13 @@ describe("testing application endpoints", () =>{
                     done();
                 });
         });
+        it("/noResponse", done => {
+            chai.request(app)
+                .get('/noResponse')
+                .end( (err, res) => {
+                    expect(res, "Response is unexpectedly defined").to.be.undefined;
+                    done();
+                });
+        });
     });
 });

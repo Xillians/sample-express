@@ -45,6 +45,9 @@ app.get("/teapot", async (req, res) => {
         "message": "Bold of you to assume I make coffee! I'm a teapot!"
     });
 });
+app.get("/noResponse", async (req, res) => {
+    res.destroy(null);
+});
 
 export function stop() {
     server.close();
