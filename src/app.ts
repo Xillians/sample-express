@@ -21,6 +21,30 @@ app.get("/complete", async (req, res) => {
         "message": "Successful get"
     });
 });
+app.get("/badRequest", async (req, res) => {
+    res.status(400);
+    res.send({
+        "message": "Unsuccessful: request bad"
+    });
+});
+app.get("/notFound", async (req, res) => {
+    res.status(404);
+    res.send({
+        "message": "Unsuccessful: not found"
+    });
+});
+app.get("/forbidden", async (req, res) => {
+    res.status(403);
+    res.send({
+        "message": "Unsuccessful: rejected"
+    });
+});
+app.get("/teapot", async (req, res) => {
+    res.status(418);
+    res.send({
+        "message": "Bold of you to assume I make coffee! I'm a teapot!"
+    });
+});
 
 export function stop() {
     server.close();
