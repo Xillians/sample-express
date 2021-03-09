@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./dist/app.js",
-    "test": "mocha ./dist/tests/*.js"
+    "test": "mocha ./dist/tests/*.js",
+    "build": "tsc",
+    "buildOnSave": "tsc -w"
   },
   "author": "",
   "license": "ISC",
