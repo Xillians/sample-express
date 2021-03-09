@@ -10,14 +10,15 @@ Application is hosted on heroku. To use live, the base url is:
 
 ### Endpoints
 
-| endpoint    | result                          |
-| ----------- | ------------------------------- |
-| /crash      | sends 500 internal server error |
-| /complete   | sends 200 OK                    |
-| /badRequest | gives a 400 bad error           |
-| /notFound   | gives a 404 not found error     |
-| /forbidden  | gives a 403 forbidden error     |
-| /teapot     | gives a 418 I'm a teapot error  |
+| endpoint    | result                                            |
+| ----------- | ------------------------------------------------- |
+| /crash      | sends 500 internal server error                   |
+| /complete   | sends 200 OK                                      |
+| /badRequest | gives a 400 bad error                             |
+| /notFound   | gives a 404 not found error                       |
+| /forbidden  | gives a 403 forbidden error                       |
+| /teapot     | gives a 418 I'm a teapot error                    |
+| /noResponse | destroys the response, and response is undefined. |
 
 ## Contribute
 
