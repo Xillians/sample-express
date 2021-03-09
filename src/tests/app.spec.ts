@@ -16,7 +16,9 @@ describe("testing application endpoints", () =>{
                 .get('/crash')
                 .end( (err, res) => {
                     const errorMessage = "Expected error occured: endpoint is /crash";
-                    expect(res.status).to.equal(500, "/crash did not have status 500!");
+                    const status = 500;
+                    const endpoint = "badRequest"
+                    expect(res.status).to.equal(status, `/${endpoint} did not have ${status}`);
                     expect(res.body.message).to.contain(errorMessage, "/crash had wrong message");
                     done();
                 });
@@ -26,7 +28,57 @@ describe("testing application endpoints", () =>{
                 .get('/complete')
                 .end( (err, res) => {
                     const message = "Successful get";
-                    expect(res.status).to.equal(200, "/crash did not have status 200!");
+                    const status = 200;
+                    const endpoint = "badRequest"
+                    expect(res.status).to.equal(status, `/${endpoint} did not have ${status}`);
+                    expect(res.body.message).to.contain(message, "/complete had wrong message");
+                    done();
+                });
+        });
+        it("/badRequest", done => {
+            chai.request(app)
+                .get('/badRequest')
+                .end( (err, res) => {
+                    const message = "Unsuccessful: request bad";
+                    const status = 400;
+                    const endpoint = "badRequest"
+                    expect(res.status).to.equal(status, `/${endpoint} did not have ${status}`);
+                    expect(res.body.message).to.contain(message, "/complete had wrong message");
+                    done();
+                });
+        });
+        it("/notFound", done => {
+            chai.request(app)
+                .get('/notFound')
+                .end( (err, res) => {
+                    const message = "Unsuccessful: not found";
+                    const status = 404;
+                    const endpoint = "badRequest"
+                    expect(res.status).to.equal(status, `/${endpoint} did not have ${status}`);
+                    expect(res.body.message).to.contain(message, "/complete had wrong message");
+                    done();
+                });
+        });
+        it("/forbidden", done => {
+            chai.request(app)
+                .get('/forbidden')
+                .end( (err, res) => {
+                    const message = "Unsuccessful: rejected";
+                    const status = 403;
+                    const endpoint = "badRequest"
+                    expect(res.status).to.equal(status, `/${endpoint} did not have ${status}`);
+                    expect(res.body.message).to.contain(message, "/complete had wrong message");
+                    done();
+                });
+        });
+        it("/teapot", done => {
+            chai.request(app)
+                .get('/teapot')
+                .end( (err, res) => {
+                    const message = "Bold of you to assume I make coffee! I'm a teapot!";
+                    const status = 418;
+                    const endpoint = "badRequest"
+                    expect(res.status).to.equal(status, `/${endpoint} did not have ${status}`);
                     expect(res.body.message).to.contain(message, "/complete had wrong message");
                     done();
                 });
