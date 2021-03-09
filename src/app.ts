@@ -19,4 +19,6 @@ app.get("/complete", async (req, res) => {
     res.send({
         "message": "Successful get"
     });
- });
+});
+
+export default app;
