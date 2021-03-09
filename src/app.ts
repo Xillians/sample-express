@@ -1,9 +1,10 @@
 import { environment } from './controller';
 import express from 'express';
+import { Server } from 'node:http';
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.listen(environment.port, () => {
+const server = app.listen(environment.port, () => {
     console.log(`Listening on port `, environment.port);
 });
 
@@ -20,5 +21,9 @@ app.get("/complete", async (req, res) => {
         "message": "Successful get"
     });
 });
+
+export function stop() {
+    server.close();
+}
 
 export default app;
