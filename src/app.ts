@@ -10,10 +10,14 @@ const server = app.listen(environment.port, () => {
 
 
 app.get("/crash", async (req, res) => {
-   res.status(500);
-   res.send({
-       "message": "Expected error occured: endpoint is /crash"
-   });
+    try {
+        throw Error("Expected error occured: endpoint is /crash")
+    } catch (error) {
+        res.status(500);
+        res.send({
+            "message": error.message
+        });   
+    }
 });
 app.get("/complete", async (req, res) => {
     res.status(200);
