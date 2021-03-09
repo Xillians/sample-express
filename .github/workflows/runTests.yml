@@ -1,0 +1,17 @@
+name: Node CI
+
+on: [push]
+
+jobs:  
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: install packages & compile
+        run: |
+          npm install
+          npm run build
+      - name: run test
+        run: npm test
+
