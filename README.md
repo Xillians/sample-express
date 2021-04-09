@@ -1,5 +1,7 @@
 # Sample express ts
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/36226340254c431ab407c17783cac160)](https://app.codacy.com/gh/Xillians/sample-express?utm_source=github.com&utm_medium=referral&utm_content=Xillians/sample-express&utm_campaign=Badge_Grade_Settings)
+
 This application is made for the single purpose of having 2 endpoints, and
 setting a few expected scenarios (server not responding with 500, etc.)
 
