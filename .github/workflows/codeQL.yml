@@ -8,7 +8,7 @@ name: "CodeQL"
 on: [push, pull_request]
 
 jobs:
-  analyze:
+  codeQL-security-scan:
     name: Analyze
     runs-on: ubuntu-latest
 
