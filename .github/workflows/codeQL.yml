@@ -9,7 +9,7 @@ on: [push, pull_request]
 
 jobs:
   codeQL-security-scan:
-    name: codacy-security-scan
+    name: codeQL-security-scan
     runs-on: ubuntu-latest
 
     strategy:
